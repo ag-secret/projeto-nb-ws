@@ -3,7 +3,7 @@
 header("Access-Control-Allow-Origin: http://localhost:8100");
 header('Access-Control-Allow-Credentials: true');
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS, HEAD");
-header("Access-Control-Allow-Headers', 'Authorization, X-Authorization, Origin, Accept, Content-Type, X-Requested-With, X-HTTP-Method-Override");
+header("Access-Control-Allow-Headers: Authorization, X-Authorization, Origin, Accept, Content-Type, X-Requested-With, X-HTTP-Method-Override");
 // if (isset($_SERVER['HTTP_ORIGIN'])) {
 //     header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
 //     header('Access-Control-Allow-Credentials: true');
