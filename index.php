@@ -16,6 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     exit(0);
 }
 
-echo 'oi gente';
+echo json_encode(['oi']);
 
 //require 'webroot' .DIRECTORY_SEPARATOR. 'index.php';
