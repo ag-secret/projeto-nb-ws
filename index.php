@@ -1,22 +1,23 @@
 <?php
-if (isset($_SERVER['HTTP_ORIGIN'])) {
-    header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
-    header('Access-Control-Allow-Credentials: true');
-    header('Access-Control-Max-Age: 86400');
-}
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+// if (isset($_SERVER['HTTP_ORIGIN'])) {
+//     header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
+//     header('Access-Control-Allow-Credentials: true');
+//     header('Access-Control-Max-Age: 86400');
+//     header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+// }
+// if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 
-    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD'])) {
-        header("Access-Control-Allow-Methods: GET, POST, OPTIONS");         
-    }
+//     if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD'])) {
+//         header("Access-Control-Allow-Methods: GET, POST, OPTIONS");         
+//     }
 
-    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS'])) {
-        header("Access-Control-Allow-Headers:        {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
-    }
+//     if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS'])) {
+//         header("Access-Control-Allow-Headers:        {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
+//     }
 
-    exit(0);
-}
+//     exit(0);
+// }
 
-echo json_encode(['Hello']);
+// echo json_encode(['Hello']);
 
-//require 'webroot' .DIRECTORY_SEPARATOR. 'index.php';
+require 'webroot' .DIRECTORY_SEPARATOR. 'index.php';

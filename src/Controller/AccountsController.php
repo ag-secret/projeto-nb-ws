@@ -12,6 +12,11 @@ class AccountsController extends AppController
 		$this->Account = new Account;
 	}
 
+	public function teste()
+	{
+		return $this->response(200, 'ok', 'YALL funciona please');
+	}
+
 	public function getAccess($account_id = null)
 	{
 		if (!$account_id) {
