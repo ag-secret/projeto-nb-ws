@@ -15,4 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     }
     exit(0);
 }
+
+echo 'oi gente';
+
 //require 'webroot' .DIRECTORY_SEPARATOR. 'index.php';
