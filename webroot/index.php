@@ -5,9 +5,9 @@ error_reporting(E_ALL);
 require dirname(__DIR__) . '/config/bootstrap.php';
 
 use Mayhem\Routing\Dispatcher;
-use Mayhem\Http\Cors;
+use Mayhem\Routing\CORS;
 
-Cors::getCors();
+CORS::getCORS();
 Dispatcher::dispatch($config);
 
 ?>

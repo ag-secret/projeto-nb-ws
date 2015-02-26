@@ -16,7 +16,16 @@ define('APP', ROOT . DS . 'src' . DS);
 define('CONFIG', ROOT . DS . 'config' . DS);
 
 /**
- * Folder the holds third party libs
+ * Folder that holds third party libs
  */
 define('VENDOR', ROOT . DS . 'vendor' . DS);
 
+/**
+ * Webroot folder path
+ */
+define('WEBROOT', ROOT . DS . 'webroot' . DS);
+
+/**
+ * Img Folder path
+ */
+define('IMG_FOLDER', WEBROOT . 'img' .  DS);

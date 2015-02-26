@@ -3,27 +3,74 @@
 namespace App\Controller;
 
 use App\Model\Message;
+use App\Model\Account;
+
+use App\Controller\Component\AndroidPushNotification;
+
+use Datetime;
 
 class MessagesController extends AppController
 {
-	function __construct()
+	public function beforeFilter()
 	{
-		parent::__construct();
+		parent::beforeFilter();
 		$this->Message = new Message;
 	}
 
-	public function getChatMessages($account_id = null, $account_id2 = null)
+	public function add()
 	{
-		if (!$account_id) {
-			$this->response(400, 'error', 'Você não informou o ID da sua conta');
+		$data = $this->request->header_body_json;
+		$now = new Datetime;
+		$data['created'] = $now->format('Y-m-d H:i:s');;
+
+		if ($this->Message->save($data)) {
+
+			// Pega regid e name do target
+			$Account = new Account;
+			$account = $Account->get($data['account_id2'], ['Profile.name','Account.android_device_registration_id']);
+			
+			// Manda para o outro
+			$payloadData = [
+				'title' => 'Desenrolo',
+				'view' => 'chat',
+				'message' => $this->user->name . ': ' . substr($data['message'], 0, 40)
+			];
+
+			try {
+				AndroidPushNotification::sendGCM($payloadData, $account->android_device_registration_id, rand(1, 100));
+			} catch (Exception $e) {
+				return $this->Response->error(400, 'Erro ao mandar notificação');
+			}
+
+			return $this->Response->success('ok');
+		} else {
+			return $this->Response->error(400, 'Erro ao salvar a mensagem');
+		}
+	}
+
+	public function get()
+	{
+		$target = $this->request->get['target'];
+		$lastUpdate = $this->request->get['lastUpdate'];
+
+		$query = $this->Message->find();
+		$query
+			->cols(['*'])
+			->where('((Message.account_id1 = :account_id AND Message.account_id2 = :target)')
+			->orWhere('(Message.account_id2 = :account_id AND Message.account_id1 = :target))')
+			->bindValues([
+				'account_id' => $this->user->id,
+				'target' => $target
+			]);
+
+		if ($lastUpdate != 'null'){	
+			$query->where("Message.created >= '{$lastUpdate}'");
 		}
 
-		if (!$account_id2) {
-			$this->response(400, 'error', 'Você não informou o ID da conta do  perfil a ser mostrado as mensagens');
-		}
+		// echo $query->__toString();
 
-		$messages = $this->Message->getChatMessages($account_id, $account_id2);
+		$messages = $this->Message->all($query);
 
-		$this->response(200, 'ok', $messages);
+		return $this->Response->success($messages);
 	}
 }

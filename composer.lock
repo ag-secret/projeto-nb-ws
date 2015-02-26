@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c7db19d80126f0a5d1d25fc7d9408a15",
+    "hash": "bae74457df9cc9f7616275a5a96b14ad",
     "packages": [
         {
             "name": "aura/sqlquery",
@@ -79,12 +79,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/danielfpedro/mayhem.git",
-                "reference": "29010e94247a0b4a3632be8bdbcc112d07c71d06"
+                "reference": "2b1cf1067c809e405b15564384a92b10d29c44de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danielfpedro/mayhem/zipball/29010e94247a0b4a3632be8bdbcc112d07c71d06",
-                "reference": "29010e94247a0b4a3632be8bdbcc112d07c71d06",
+                "url": "https://api.github.com/repos/danielfpedro/mayhem/zipball/2b1cf1067c809e405b15564384a92b10d29c44de",
+                "reference": "2b1cf1067c809e405b15564384a92b10d29c44de",
                 "shasum": ""
             },
             "require": {
@@ -115,7 +115,141 @@
                 "source": "https://github.com/danielfpedro/mayhem/tree/master",
                 "issues": "https://github.com/danielfpedro/mayhem/issues"
             },
-            "time": "2015-01-29 14:14:41"
+            "time": "2015-02-11 16:38:04"
+        },
+        {
+            "name": "facebook/php-sdk-v4",
+            "version": "4.0.16",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/facebook/facebook-php-sdk-v4.git",
+                "reference": "66da9e0e123b6440974bfe22210a8a053e9b5599"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/facebook/facebook-php-sdk-v4/zipball/66da9e0e123b6440974bfe22210a8a053e9b5599",
+                "reference": "66da9e0e123b6440974bfe22210a8a053e9b5599",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "~4.0",
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Facebook\\": "src/Facebook/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Facebook Platform"
+            ],
+            "authors": [
+                {
+                    "name": "Facebook",
+                    "homepage": "https://github.com/facebook/facebook-php-sdk-v4/contributors"
+                }
+            ],
+            "description": "Facebook SDK for PHP",
+            "homepage": "https://github.com/facebook/facebook-php-sdk-v4",
+            "keywords": [
+                "facebook",
+                "sdk"
+            ],
+            "time": "2015-02-03 19:20:31"
+        },
+        {
+            "name": "firebase/php-jwt",
+            "version": "dev-master",
+            "target-dir": "Firebase/PHP-JWT",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/firebase/php-jwt.git",
+                "reference": "83b8899cb73d85d648af93f37ec0ac89f4a5bbae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/83b8899cb73d85d648af93f37ec0ac89f4a5bbae",
+                "reference": "83b8899cb73d85d648af93f37ec0ac89f4a5bbae",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "Authentication/",
+                    "Exceptions/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Neuman Vong",
+                    "email": "neuman+pear@twilio.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Anant Narayanan",
+                    "email": "anant@php.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+            "homepage": "https://github.com/firebase/php-jwt",
+            "time": "2014-11-18 17:58:25"
+        },
+        {
+            "name": "php-gcm/php-gcm",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lkorth/php-gcm.git",
+                "reference": "35fbfe44b037589918a75d69831a85214e8ba589"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lkorth/php-gcm/zipball/35fbfe44b037589918a75d69831a85214e8ba589",
+                "reference": "35fbfe44b037589918a75d69831a85214e8ba589",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHP_GCM": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Korth",
+                    "email": "luke@lukekorth.com"
+                }
+            ],
+            "description": "A PHP library for sending GCM messages",
+            "homepage": "https://github.com/lkorth/php-gcm",
+            "keywords": [
+                "android",
+                "gcm",
+                "library",
+                "php"
+            ],
+            "time": "2013-12-20 03:36:18"
         },
         {
             "name": "slim/slim",
@@ -162,6 +296,35 @@
                 "router"
             ],
             "time": "2014-12-09 19:59:29"
+        },
+        {
+            "name": "smottt/wideimage",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smottt/WideImage.git",
+                "reference": "ee2e71be7e3f298248bd6d0f4a157bb42f432ba7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smottt/WideImage/zipball/ee2e71be7e3f298248bd6d0f4a157bb42f432ba7",
+                "reference": "ee2e71be7e3f298248bd6d0f4a157bb42f432ba7",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "WideImage": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0",
+                "LGPL-2.1"
+            ],
+            "description": "An open-source PHP library for image manipulation. (With namespaces, PHP 5.3+)",
+            "homepage": "http://wideimage.sourceforge.net",
+            "time": "2014-10-05 14:59:53"
         },
         {
             "name": "vlucas/valitron",
@@ -214,7 +377,10 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "danielfpedro/mayhem": 20
+        "danielfpedro/mayhem": 20,
+        "smottt/wideimage": 20,
+        "firebase/php-jwt": 20,
+        "php-gcm/php-gcm": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

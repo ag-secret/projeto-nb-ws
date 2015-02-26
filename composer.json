@@ -13,7 +13,11 @@
         }
     ],
     "require": {
-        "danielfpedro/mayhem": "dev-master"
+        "danielfpedro/mayhem": "dev-master",
+        "facebook/php-sdk-v4" : "4.0.*",
+        "smottt/wideimage": "dev-master",
+        "firebase/php-jwt": "dev-master",
+        "php-gcm/php-gcm": "dev-master"
     },
      "autoload": {
         "psr-4": {
